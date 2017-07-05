@@ -5,16 +5,23 @@
  */
 package com.project.springboot02.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  *
  * @author Jorge
  */
 public class Address {
     
+    @JsonProperty
     private String calle;
+    @JsonProperty
     private String colonia;
+    @JsonProperty
     private String delegacion;
+    @JsonProperty
     private Integer numero;
+    @JsonProperty
     private String codigoPostal;
 
     /**

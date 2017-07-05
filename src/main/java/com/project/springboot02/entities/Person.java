@@ -5,6 +5,8 @@
  */
 package com.project.springboot02.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  *
  * @author Jorge
@@ -13,12 +15,19 @@ public class Person {
    
     enum SEX{M,F}
     
+    @JsonProperty
     private String name;
+    @JsonProperty
     private String firstLastName;
+    @JsonProperty
     private String secondLastName;
+    @JsonProperty
     private Integer age;
+    @JsonProperty
     private SEX sex;
+    @JsonProperty
     private Address address;
+    @JsonProperty
     private String curp;
 
     public Person() {
