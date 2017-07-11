@@ -6,7 +6,6 @@
 package com.project.springboot02.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 /**
  *
  * @author Jorge
