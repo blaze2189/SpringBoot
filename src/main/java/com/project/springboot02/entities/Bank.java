@@ -13,7 +13,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Banco {
+public class Bank {
 
     private String codeSucursal;
     private String nameSucursal;

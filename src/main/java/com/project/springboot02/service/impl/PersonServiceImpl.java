@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.project.springboot02.service.implement;
+package com.project.springboot02.service.impl;
 
-import com.project.springboot02.entities.Address;
+import com.project.springboot02.dao.PersonDAO;
 import com.project.springboot02.entities.Person;
 import com.project.springboot02.service.PersonService;
 import java.util.ArrayList;
@@ -17,49 +17,56 @@ import org.springframework.stereotype.Service;
  * @author Jorge
  */
 @Service
-public class PersonServiceImpmlements implements PersonService {
+public class PersonServiceImpl extends AbstractService<PersonDAO,String,Person> implements PersonService {
 
-    private final List<Person> LISTA_PERSONAS = new ArrayList<>();
+    protected final List<Person> PERSON_LIST = new ArrayList<>();
 
-    public PersonServiceImpmlements() {
-        Person p1 = new Person();
-        Person p2 = new Person();
-        Person p3 = new Person();
-        
-        Address adress= new Address();
-        
-        p1.setName("Nombre1");
-        p1.setFirstLastName("FirstLastName1");
-        p1.setSecondLastName("SecondLastName1");
-        p1.setCurp("CURP1");
-        p1.setAddress(adress);
-        
-        p2.setName("Nombre2");
-        p2.setFirstLastName("FirstLastName2");
-        p2.setSecondLastName("SecondLastName2");
-        p2.setCurp("CURP2");
-        p2.setAddress(adress);
-        
-        p3.setName("Nombre3");
-        p3.setFirstLastName("FirstLastName3");
-        p3.setSecondLastName("SecondLastName3");
-        p3.setCurp("CURP3");
-        p3.setAddress(adress);
-        
-        LISTA_PERSONAS.add(p1);
-        LISTA_PERSONAS.add(p2);
-        LISTA_PERSONAS.add(p3);
-    }
+//    public PersonServiceImpl() {
+//        Person p1 = new Person();
+//        Person p2 = new Person();
+//        Person p3 = new Person();
+//        
+//        Address adress= new Address();
+//        
+//        p1.setName("Nombre1");
+//        p1.setFirstLastName("FirstLastName1");
+//        p1.setSecondLastName("SecondLastName1");
+//        p1.setCurp("CURP1");
+//        p1.setAddress(adress);
+//        
+//        p2.setName("Nombre2");
+//        p2.setFirstLastName("FirstLastName2");
+//        p2.setSecondLastName("SecondLastName2");
+//        p2.setCurp("CURP2");
+//        p2.setAddress(adress);
+//        
+//        p3.setName("Nombre3");
+//        p3.setFirstLastName("FirstLastName3");
+//        p3.setSecondLastName("SecondLastName3");
+//        p3.setCurp("CURP3");
+//        p3.setAddress(adress);
+//        
+//        PERSON_LIST.add(p1);
+//        PERSON_LIST.add(p2);
+//        PERSON_LIST.add(p3);
+//    }
+    
+//    @Autowired
+//    EmployeeService employeeService;
     
     @Override
     public List<Person> readAll() {
-        return LISTA_PERSONAS;
+//        List<Employee> lp = employeeService.readAll();
+//        for(Person p:lp){
+//            System.out.println("nombre "+p.getName());
+//        }
+        return PERSON_LIST;
     }
 
     @Override
     public Person readPerson(String curp) {
         Person returnPerson=new Person();
-        for(Person p:LISTA_PERSONAS){
+        for(Person p:PERSON_LIST){
             if(curp.equals(p.getCurp())){
                 returnPerson=p;
                 break;
@@ -71,9 +78,9 @@ public class PersonServiceImpmlements implements PersonService {
     @Override
     public boolean deletePerson(String curp) {
         boolean returnDelete=false;
-        for(Person p:LISTA_PERSONAS){
+        for(Person p:PERSON_LIST){
             if(curp.equals(p.getCurp())){
-                LISTA_PERSONAS.remove(p);
+                PERSON_LIST.remove(p);
                 returnDelete=true;
                 break;
             }
@@ -85,7 +92,7 @@ public class PersonServiceImpmlements implements PersonService {
     public boolean updatePerson(Person person) {
         boolean returnUpdate=false;
         String curp = person.getCurp();
-        for(Person p:LISTA_PERSONAS){
+        for(Person p:PERSON_LIST){
             if(curp.equals(p.getCurp())){
                 p.setName(person.getName());
                 p.setFirstLastName(person.getFirstLastName());
@@ -102,7 +109,7 @@ public class PersonServiceImpmlements implements PersonService {
 
     @Override
     public boolean addPerson(Person person) {
-        LISTA_PERSONAS.add(person);
+        PERSON_LIST.add(person);
         return true;
     }
     

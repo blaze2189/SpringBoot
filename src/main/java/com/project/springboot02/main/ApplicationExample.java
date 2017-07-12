@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan({"com.project.springboot02.controller","com.project.springboot02.service.implement"})
+@ComponentScan({"com.project.springboot02.controller","com.project.springboot02.service.impl","com.project.springboot02.dao.impl"})
 @SpringBootApplication
 @EnableAutoConfiguration
 public class ApplicationExample {

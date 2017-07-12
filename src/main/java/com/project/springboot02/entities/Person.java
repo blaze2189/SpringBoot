@@ -6,6 +6,7 @@
 package com.project.springboot02.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 /**
@@ -14,7 +15,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Person {
+public class Person implements Serializable {
    
     enum SEX{M,F}
     

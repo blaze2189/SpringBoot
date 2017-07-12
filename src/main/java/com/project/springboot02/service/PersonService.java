@@ -5,6 +5,7 @@
  */
 package com.project.springboot02.service;
 
+import com.project.springboot02.dao.PersonDAO;
 import com.project.springboot02.entities.Person;
 import java.util.List;
 
@@ -12,12 +13,16 @@ import java.util.List;
  *
  * @author Jorge
  */
-public interface PersonService {
+public interface PersonService extends ServiceInterface<PersonDAO,String,Person>{
     
     List<Person> readAll();
+
     Person readPerson(String curp);
+
     boolean deletePerson(String curp);
+
     boolean updatePerson(Person person);
+
     boolean addPerson(Person person);
     
 }

@@ -44,7 +44,7 @@ public class PersonContoller {
     @ResponseBody
     @RequestMapping(method=RequestMethod.GET)
     public List<Person> getAll(){
-        List<Person> listPerson = personService.readAll();
+          List<Person> listPerson = personService.readAll();
         return listPerson;
     }
     
@@ -52,7 +52,7 @@ public class PersonContoller {
     @RequestMapping(method=RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public boolean updatePerson(@RequestBody Person person){
         System.out.println("doing put");
-        personService.updatePerson(person);
+                personService.updatePerson(person);
         return true;
     }
     

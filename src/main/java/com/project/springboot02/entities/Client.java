@@ -15,7 +15,7 @@ import lombok.Setter;;
  */
 @Getter
 @Setter
-public class Client extends Person{
+public class Client extends Person {
     
     private Date startDate;
     private Date enDate;

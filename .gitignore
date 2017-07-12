@@ -1,1 +1,3 @@
-/target/
+target/*
+target/SpringBoot02-1.0-SNAPSHOT.jar
+
