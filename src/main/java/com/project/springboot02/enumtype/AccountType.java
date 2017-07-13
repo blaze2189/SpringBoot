@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.project.springboot02.entities;
+package com.project.springboot02.enumtype;
 
-import java.io.Serializable;
 import lombok.Getter;
-import lombok.Setter;
+
 /**
  *
  * @author Jorge
  */
 @Getter
-@Setter
-public class Bank implements Serializable{
-
-    private String codeSucursal;
-    private String nameSucursal;
-    private Address address;
+public enum AccountType {
+    CREDIT("Crdit"),DEBIT("Debit");
     
+    private String description;
+    
+    AccountType(String description){
+        this.description=description;
+    }
     
 }

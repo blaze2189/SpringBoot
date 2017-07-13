@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.project.springboot02.service;
+package com.project.springboot02.dao;
 
-import com.project.springboot02.dao.BankAccountDAO;
 import com.project.springboot02.entities.BankAccount;
 
 /**
  *
  * @author Jorge
  */
-public interface BankAccountService extends ServiceInterface<BankAccountDAO, String, BankAccount> {
+public interface BankAccountDAO extends DAO<String,BankAccount> {
     
 }

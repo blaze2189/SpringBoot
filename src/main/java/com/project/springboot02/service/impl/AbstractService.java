@@ -32,16 +32,16 @@ public abstract class AbstractService <D extends DAO, K extends Serializable , O
         return (O)dao.read(key);
     }
 
-    public boolean delete(K key){
-        return dao.delete(key);
+    public boolean delete(K k){
+        return dao.delete(k);
     }
 
-    public boolean update(K key){
-        return dao.update(key);
+    public boolean update(O o){
+        return dao.update(o);
     }
 
-    public boolean add(K key){
-        return dao.add(key);
+    public boolean add(O o){
+        return dao.add(o);
     }
 
 }

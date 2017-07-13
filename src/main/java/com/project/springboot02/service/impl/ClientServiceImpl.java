@@ -20,9 +20,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClientServiceImpl extends AbstractService<ClientDAO,String,Client> implements ClientService {
     
-     public ClientServiceImpl() {
-         
-    }
-
-    
 }

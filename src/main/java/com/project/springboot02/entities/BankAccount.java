@@ -5,6 +5,8 @@
  */
 package com.project.springboot02.entities;
 
+import com.project.springboot02.enumtype.AccountType;
+import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,8 +16,9 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class BankAccount {
+public class BankAccount implements Serializable{
     
-    
+    private AccountType accountType;
+    private Double cash;
     
 }

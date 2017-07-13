@@ -22,10 +22,10 @@ public interface ServiceInterface<D extends DAO, K , O > {
 
     O read(K key);
 
-    boolean delete(K key);
+    boolean delete(K k);
 
-    boolean update(K key);
+    boolean update(O o);
 
-    boolean add(K key);
+    boolean add(O o);
 
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.project.springboot02.service;
+package com.project.springboot02.dao.impl;
 
 import com.project.springboot02.dao.BankDAO;
 import com.project.springboot02.entities.Bank;
@@ -12,6 +12,6 @@ import com.project.springboot02.entities.Bank;
  *
  * @author Jorge
  */
-public interface BankService extends ServiceInterface<BankDAO, String, Bank>{
+public class BankDAOImpl extends AbstractDAO<String,Bank> implements BankDAO {
     
 }
