@@ -33,11 +33,13 @@ public class Person implements Serializable {
     private Address address;
     @JsonProperty
     private String curp;
-
+    @JsonProperty
+    private Bank bank;
+    
     public Person() {
     }
 
-    public Person(String name, String firstLastName, String secondLastName, Integer age, SEX sex, Address address, String curp) {
+    public Person(String name, String firstLastName, String secondLastName, Integer age, SEX sex, Address address, String curp, Bank bank) {
         this.name = name;
         this.firstLastName = firstLastName;
         this.secondLastName = secondLastName;
@@ -45,6 +47,7 @@ public class Person implements Serializable {
         this.sex = sex;
         this.address = address;
         this.curp = curp;
+        this.bank = bank;
     }
     
 }

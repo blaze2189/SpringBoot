@@ -7,6 +7,7 @@ package com.project.springboot02.dao.impl;
 
 import com.project.springboot02.dao.EmployeeDAO;
 import com.project.springboot02.entities.Address;
+import com.project.springboot02.entities.Client;
 import com.project.springboot02.entities.Employee;
 import java.util.HashMap;
 import org.springframework.stereotype.Repository;
@@ -47,6 +48,23 @@ public class EmployeeDAOImpl extends AbstractDAO<String, Employee> implements Em
         p3.setCurp("CURP3");
         p3.setAddress(adress);
         mapData.put(p3.getCurp(),p3);
+    }
+    
+        @Override
+    public boolean add(Employee employee) {
+        Integer actualSize = this.mapData.size();
+        this.mapData.put(employee.getCurp(), employee);
+        Integer newSize = this.mapData.size();
+        boolean returnValue = actualSize>newSize;
+        return returnValue;
+    }
+
+    @Override
+    public boolean update(Employee employee) {
+        String curp =employee.getCurp();
+        Employee oldEmployee =this.mapData.get(curp);
+        boolean updated = this.mapData.replace(curp, oldEmployee, employee);
+        return updated;
     }
     
 }

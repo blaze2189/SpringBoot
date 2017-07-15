@@ -8,11 +8,13 @@ package com.project.springboot02.service.impl;
 import com.project.springboot02.dao.BankDAO;
 import com.project.springboot02.entities.Bank;
 import com.project.springboot02.service.BankService;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Jorge
  */
+@Service
 public class BankServiceImpl extends AbstractService<BankDAO, String, Bank> implements BankService {
     
 }

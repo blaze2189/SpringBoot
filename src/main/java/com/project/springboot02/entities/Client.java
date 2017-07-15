@@ -5,6 +5,7 @@
  */
 package com.project.springboot02.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 import java.util.Set;
 import lombok.Getter;
@@ -16,9 +17,12 @@ import lombok.Setter;;
 @Getter
 @Setter
 public class Client extends Person {
-    
+
+    @JsonProperty
     private Date startDate;
+    @JsonProperty
     private Date enDate;
+    @JsonProperty
     private Set<BankAccount> setBankAccount;
     
 }

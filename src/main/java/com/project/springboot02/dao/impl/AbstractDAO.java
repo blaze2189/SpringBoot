@@ -47,7 +47,7 @@ public abstract class AbstractDAO<K extends Serializable,O> implements DAO<K,O> 
     }
 
     @Override
-    public boolean add(Object object) {
+    public boolean add(O o) {
         throw new UnsupportedOperationException("not implemented");
     }
     

@@ -7,8 +7,13 @@ package com.project.springboot02.dao.impl;
 
 import com.project.springboot02.dao.ClientDAO;
 import com.project.springboot02.entities.Address;
+import com.project.springboot02.entities.BankAccount;
 import com.project.springboot02.entities.Client;
+import com.project.springboot02.enumtype.AccountType;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -27,11 +32,24 @@ public class ClientDAOImpl extends AbstractDAO<String, Client> implements Client
 
         Address adress = new Address();
 
+        Set<BankAccount> setBankAccount = new HashSet<>();
+        
+        BankAccount bankAccount = new BankAccount();
+        bankAccount.setAccountType(AccountType.CREDIT);
+        bankAccount.setCash(102.0);
+        setBankAccount.add(bankAccount);
+        
+        bankAccount = new BankAccount();
+        bankAccount.setAccountType(AccountType.DEBIT);
+        bankAccount.setCash(10.0);
+        setBankAccount.add(bankAccount);
+        
         p1.setName("Client1");
         p1.setFirstLastName("FirstLastName1");
         p1.setSecondLastName("SecondLastName1");
         p1.setCurp("CURP1");
         p1.setAddress(adress);
+        p1.setSetBankAccount(setBankAccount);
         mapData.put(p1.getCurp(),p1);
 
         p2.setName("Client2");
@@ -49,4 +67,23 @@ public class ClientDAOImpl extends AbstractDAO<String, Client> implements Client
         mapData.put(p3.getCurp(),p3);
     }
 
+    @Override
+    public boolean add(Client client) {
+        Integer actualSize = this.mapData.size();
+        this.mapData.put(client.getCurp(), client);
+        Integer newSize = this.mapData.size();
+        boolean returnValue = actualSize>newSize;
+        return returnValue;
+    }
+
+    @Override
+    public boolean update(Client client) {
+        String curp =client.getCurp();
+        Client oldClient =this.mapData.get(curp);
+        boolean updated = this.mapData.replace(curp, oldClient, client);
+        return updated;
+    }
+
+    
+    
 }
