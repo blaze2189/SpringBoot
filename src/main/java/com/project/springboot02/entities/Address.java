@@ -18,15 +18,15 @@ import lombok.Setter;
 public class Address {
     
     @JsonProperty
-    private String calle;
+    private String street;
     @JsonProperty
-    private String colonia;
+    private String colony;
     @JsonProperty
-    private String delegacion;
+    private String municipality;
     @JsonProperty
-    private Integer numero;
+    private Integer numberBank;
     @JsonProperty
-    private String codigoPostal;
+    private String zipCode;
     
     
 }

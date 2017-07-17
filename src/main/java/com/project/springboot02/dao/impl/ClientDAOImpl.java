@@ -83,7 +83,6 @@ public class ClientDAOImpl extends AbstractDAO<String, Client> implements Client
         boolean updated = this.mapData.replace(curp, oldClient, client);
         return updated;
     }
-
     
     
 }

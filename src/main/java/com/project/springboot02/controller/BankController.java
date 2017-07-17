@@ -60,7 +60,7 @@ public class BankController {
     }
     
     @ResponseBody
-    @RequestMapping(value="{codeBank}", method=RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="{codeBank}", method=RequestMethod.DELETE)
     public boolean deleteBank(@PathVariable String codeBank){
         System.out.println("doing delete");
         boolean returnValue=bankService.delete(codeBank);
